@@ -1,0 +1,436 @@
+{
+  "name": "Prodavnica",
+  "description": "Baza podataka prodavnice",
+      "entities": [
+        {
+          "name": "employees",
+          "attributes": [
+            {
+              "name": "employeeNumber",
+              "type": "Int",
+              "length": "10",
+              "default": "not null",
+              "primaryKey": "false"
+            }, 
+            {
+              "name": "lastName",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "firstName",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "email",
+              "type": "Varchar",
+              "length": "100",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "officeCode",
+              "type": "Varchar",
+              "length": "10",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "reportsTo",
+              "type": "Int",
+              "length": "10",
+              "mandatory": "false",
+              "default": "null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "jobTitle",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "customers",
+          "attributes": [
+            {
+              "name": "customerNumber",
+              "type": "Int",
+              "length": "10",
+              "default": "not null",
+              "autoincrement": "true",
+              "primaryKey": "true"
+            },
+            {
+              "name": "lastName",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "firstName",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "email",
+              "type": "Varchar",
+              "length": "100",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "adressLine1",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "city",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "false",
+              "default": "null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "country",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "offices",
+          "attributes": [
+            {
+              "name": "officeCode",
+              "type": "Varchar",
+              "length": "10",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "city",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "phone",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "adressLine1",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "country",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "postalCode",
+              "type": "Varchar",
+              "length": "15",
+              "mandatory": "false",
+              "default": "null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "territory",
+              "type": "Varchar",
+              "length": "10",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "attributes": [
+            {
+              "name": "productCode",
+              "type": "Varchar",
+              "length": "15",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "productName",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "productLine",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "productVendor",
+              "type": "Varchar",
+              "length": "100",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "quantityInStock",
+              "type": "Int",
+              "length": "10",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "buyPrice",
+              "type": "Decimal",
+              "length": "8",
+              "mandatory": "false",
+              "default": "null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "MSRP",
+              "type": "Decimal",
+              "length": "8",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "payments",
+          "attributes": [
+            {
+              "name": "customerNumber",
+              "type": "Int",
+              "length": "10",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "checkNumber",
+              "type": "Varchar",
+              "length": "50",
+              "mandatory": "true",
+              "default": "null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "paymentDate",
+              "type": "DATE",
+              "length": "-1",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "amount",
+              "type": "Decimal",
+              "length": "8",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "orders",
+          "attributes": [
+            {
+              "name": "orderNumber",
+              "type": "Int",
+              "length": "10",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "status",
+              "type": "Varchar",
+              "length": "15",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "orderDate",
+              "type": "DATE",
+              "length": "-1",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "requiredDate",
+              "type": "DATE",
+              "length": "-1",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "customerNumber",
+              "type": "Decimal",
+              "length": "8",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "orderDetails",
+          "attributes": [
+            {
+              "name": "orderNumber",
+              "type": "Int",
+              "length": "10",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "productCode",
+              "type": "Varchar",
+              "length": "15",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "true"
+            },
+            {
+              "name": "orderQuantity",
+              "type": "int",
+              "length": "10",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            },
+            {
+              "name": "priceEach",
+              "type": "Decimal",
+              "length": "7",
+              "mandatory": "true",
+              "default": "not null",
+              "primaryKey": "false"
+            }
+          ]
+        },
+        {
+          "name": "productLines",
+          "attributes": [
+            {
+              "name": "productLine",
+              "type": "Varchar",
+              "length": "50",
+              "default": "not null",
+              "primaryKey": "true"
+            }
+          ]
+        }
+      ]
+    ,
+    
+      "relations": [
+        {
+          "type": "zero or one to many",
+          "from": "employees",
+          "to": "employees",
+          "fromAttribute": "employeeNumber",
+          "toAttribute": "reportsTo",
+          "relationName": "boss"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "offices",
+          "to": "employees",
+          "fromAttribute": "officeCode",
+          "toAttribute": "officeCode",
+          "relationName": "office workers"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "customers",
+          "to": "payments",
+          "fromAttribute": "customerNumber",
+          "toAttribute": "customerNumber",
+          "relationName": "payment"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "customers",
+          "to": "orders",
+          "fromAttribute": "customerNumber",
+          "toAttribute": "customerNumber",
+          "relationName": "order placed"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "orders",
+          "to": "orderDetails",
+          "fromAttribute": "orderNumber",
+          "toAttribute": "orderNumber",
+          "relationName": "order placed for product"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "products",
+          "to": "orderDetails",
+          "fromAttribute": "productCode",
+          "toAttribute": "productCode",
+          "relationName": "product details for placed order"
+        },
+        {
+          "type": "exactly one to many",
+          "from": "products",
+          "to": "productLines",
+          "fromAttribute": "productLine",
+          "toAttribute": "productLine",
+          "relationName": "payment"
+        }
+      ]
+    
+}

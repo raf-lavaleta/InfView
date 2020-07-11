@@ -1,0 +1,321 @@
+{
+  "name": "Fakultet",
+  "description": "Baza podataka fakulteta",
+  "entities": [
+    {
+      "name": "studenti",
+      "attributes": [
+        {
+          "name": "struka",
+          "type": "Varchar",
+          "length": "1",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "true"
+        },
+        {
+          "name": "brojIndeksa",
+          "type": "Int",
+          "length": "6",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "true"
+        },
+        {
+          "name": "lastName",
+          "type": "Varchar",
+          "length": "20",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "imeOca",
+          "type": "Varchar",
+          "length": "20",
+          "mandatory": "false",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "firstName",
+          "type": "Varchar",
+          "length": "20",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "Pol",
+          "type": "Varchar",
+          "length": "1",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "jbmg",
+          "type": "Varchar",
+          "length": "13",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "datumRodjenja",
+          "type": "DATE",
+          "length": "25",
+          "mandatory": "true",
+          "default": "null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "adresa",
+          "type": "Varchar",
+          "length": "80",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "brojTelefona",
+          "type": "Varchar",
+          "length": "20",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        }
+      ]
+    },
+    {
+      "name": "nastavni predmet",
+      "attributes": [
+        {
+          "name": "oznakaPlana",
+          "type": "Varchar",
+          "length": "2",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "true"
+        },
+        {
+          "name": "sifraPredmeta",
+          "type": "Varchar",
+          "length": "5",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "true"
+        },
+        {
+          "name": "nazivPredmeta",
+          "type": "Varchar",
+          "length": "80",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "trajeSemestar",
+          "type": "Int",
+          "length": "2",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "brojKredita",
+          "type": "Int",
+          "length": "3",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        }
+      ]
+    },
+    {
+      "name": "studijski programi",
+      "attributes": [
+        {
+          "name": "oznakaPrograma",
+          "type": "Char",
+          "length": "4",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "true"
+        },
+        {
+          "name": "nazivKojiSeStice",
+          "type": "Varchar",
+          "length": "80",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "nazivPrograma",
+          "type": "Varchar",
+          "length": "80",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        }
+      ]
+    },
+    {
+      "name": "plan studijskog programa",
+      "attributes": [
+        {
+          "name": "oznakaPrograma",
+          "type": "Char",
+          "length": "4",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "oznakaPlana",
+          "type": "Char",
+          "length": "2",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "sifraPredmeta",
+          "type": "Varchar",
+          "length": "5",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "godinaPredmeta",
+          "type": "Int",
+          "length": "1",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        },
+        {
+          "name": "semestarPredmeta",
+          "type": "Int",
+          "length": "2",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        }
+      ]
+    },
+	{
+	  "name": "tok studija",
+      "attributes": [
+        {
+          "name": "struka",
+          "type": "Varchar",
+          "length": "1",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "brojIndeksa",
+          "type": "Int",
+          "length": "6",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "oznakaPrograma",
+          "type": "Varchar",
+          "length": "4",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "skolskaGodina",
+          "type": "Varchar",
+          "length": "4",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "true"
+        },
+        {
+          "name": "godinaStudija",
+          "type": "Int",
+          "length": "1",
+          "default": "not null",
+          "mandatory": "true",
+          "primaryKey": "false"
+        },
+        {
+          "name": "upisujePoPlanu",
+          "type": "Char",
+          "length": "2",
+          "mandatory": "true",
+          "default": "not null",
+          "primaryKey": "false"
+        }
+      ]
+	}
+  ],
+  "relations": [
+    {
+      "type": "exactly one to exactly one",
+      "from": "plan studijskog programa",
+      "to": "studijski programi",
+      "fromAttribute": "oznakaPrograma",
+      "toAttribute": "oznakaPrograma",
+      "relationName": "PlanStudijskogPrograma-StudijskiProgrami"
+    },
+    {
+      "type": "exactly one to one",
+      "from": "plan studijskog programa",
+      "to": "nastavni predmet",
+      "fromAttribute": "oznakaPlana",
+      "toAttribute": "oznakaPlana",
+      "relationName": "NastavniPredmeti-PlanStudijskogPrograma"
+    },
+    {
+      "type": "exactly one to one",
+      "from": "plan studijskog programa",
+      "to": "nastavni predmet",
+      "fromAttribute": "sifraPredmeta",
+      "toAttribute": "sifraPredmeta",
+      "relationName": "NastavniPredmeti-PlanStudijskogPrograma"
+    },
+    {
+      "type": "many to exactly one",
+      "from": "studenti",
+      "to": "tok studija",
+      "fromAttribute": "struka",
+      "toAttribute": "struka",
+      "relationName": "TokStudija-Studenti"
+    },
+    {
+      "type": "exactly one to exactly one",
+      "from": "studenti",
+      "to": "tok studija",
+      "fromAttribute": "brojIndeksa",
+      "toAttribute": "brojIndeksa",
+      "relationName": "TokStudija-Studenti"
+    },
+    {
+      "type": "exactly one to exactly one",
+      "from": "plan studijskog programa",
+      "to": "tok studija",
+      "fromAttribute": "oznakaPrograma",
+      "toAttribute": "oznakaPrograma",
+      "relationName": "TokStudija-PlanStudijskogPrograma"
+    },
+    {
+      "type": "exactly one to exactly one",
+      "from": "studijski programi",
+      "to": "tok studija",
+      "fromAttribute": "oznakaPrograma",
+      "toAttribute": "oznakaPrograma",
+      "relationName": "TokStudija-StudijskiProgrami"
+    }
+  ]
+}

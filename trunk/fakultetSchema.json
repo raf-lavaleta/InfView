@@ -1,0 +1,221 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "name",
+    "description",
+    "entities",
+    "relations"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "Fakultet"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "Baza podataka fakulteta"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "entities": {
+      "$id": "#/properties/entities",
+      "type": "array",
+      "title": "The Entities Schema",
+      "items": {
+        "$id": "#/properties/entities/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "name",
+          "attributes"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/entities/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "studenti"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "attributes": {
+            "$id": "#/properties/entities/items/properties/attributes",
+            "type": "array",
+            "title": "The Attributes Schema",
+            "items": {
+              "$id": "#/properties/entities/items/properties/attributes/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "name",
+                "type",
+                "length",
+                "mandatory",
+                "default",
+                "primaryKey"
+              ],
+              "properties": {
+                "name": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "struka"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "type": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/type",
+                  "type": "string",
+                  "title": "The Type Schema",
+                  "default": "",
+                  "examples": [
+                    "Varchar"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "length": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/length",
+                  "type": "string",
+                  "title": "The Length Schema",
+                  "default": "",
+                  "examples": [
+                    "1"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "mandatory": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/mandatory",
+                  "type": "string",
+                  "title": "The Mandatory Schema",
+                  "default": "",
+                  "examples": [
+                    "true"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "default": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/default",
+                  "type": "string",
+                  "title": "The Default Schema",
+                  "default": "",
+                  "examples": [
+                    "not null"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "primaryKey": {
+                  "$id": "#/properties/entities/items/properties/attributes/items/properties/primaryKey",
+                  "type": "string",
+                  "title": "The Primarykey Schema",
+                  "default": "",
+                  "examples": [
+                    "false"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "relations": {
+      "$id": "#/properties/relations",
+      "type": "array",
+      "title": "The Relations Schema",
+      "items": {
+        "$id": "#/properties/relations/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "type",
+          "from",
+          "to",
+          "fromAttribute",
+          "toAttribute",
+          "relationName"
+        ],
+        "properties": {
+          "type": {
+            "$id": "#/properties/relations/items/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": [
+              "exactly one to exactly one"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from": {
+            "$id": "#/properties/relations/items/properties/from",
+            "type": "string",
+            "title": "The From Schema",
+            "default": "",
+            "examples": [
+              "studijski program"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "to": {
+            "$id": "#/properties/relations/items/properties/to",
+            "type": "string",
+            "title": "The To Schema",
+            "default": "",
+            "examples": [
+              "plan studijskog programa"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "fromAttribute": {
+            "$id": "#/properties/relations/items/properties/fromAttribute",
+            "type": "string",
+            "title": "The Fromattribute Schema",
+            "default": "",
+            "examples": [
+              "oznakaPrograma"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "toAttribute": {
+            "$id": "#/properties/relations/items/properties/toAttribute",
+            "type": "string",
+            "title": "The Toattribute Schema",
+            "default": "",
+            "examples": [
+              "oznakaPrograma"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "relationName": {
+            "$id": "#/properties/relations/items/properties/relationName",
+            "type": "string",
+            "title": "The Relationname Schema",
+            "default": "",
+            "examples": [
+              "StudijskiProgrami-PlanStudijskogPrograma"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

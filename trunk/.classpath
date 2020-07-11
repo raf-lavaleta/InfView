@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/jtds-1.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.everit.json.schema-1.11.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/handy-uri-templates-2.1.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/gson-2.8.5.jar" sourcepath="C:/Users/Filip/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

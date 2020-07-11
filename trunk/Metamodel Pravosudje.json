@@ -1,0 +1,1174 @@
+{
+    "name": "Pravosudje",
+    "description": "Baza podataka za MPS pravosudje",
+    "type" : "mssql",
+    "username" : "tim_202_5_ui2018",
+    "password" : "xzM5UP@K!c6y*N-s",
+    "connection" : "jdbc:jtds:sqlserver://147.91.175.155/tim_202_5_ui2018",
+    "entities": [
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ADVOKAT_PO_SLUZBENOJ_NADLEZNOSTI",
+            "additionalProperties": false,
+            "properties": {
+                "SUD_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "BROJ_NALOGA": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "APSN_DATUM": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SUD_DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "OS_ID",
+                "LIC_BR",
+                "BROJ_NALOGA",
+                "APSN_DATUM"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ADVOKATSKA_KANCELARIJA",
+            "additionalProperties": false,
+            "properties": {
+                "KANC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "KANC_NAZIV": {
+                    "type": "string",
+                    "maxLength": 120
+                },
+                "KANC_ULICA": {
+                    "type": "string",
+                    "maxLength": 90
+                },
+                "KANC_BROJ": {
+                    "type": "string",
+                    "maxLength": 14
+                },
+                "KANC_WWW": {
+                    "type": "string",
+                    "maxLength": 40
+                },
+                "KANC_E_MAIL": {
+                    "type": "string",
+                    "maxLength": 50
+                },
+                "KANC_PAK": {
+                    "type": "string",
+                    "maxLength": 14
+                },
+                "KANC_PIB": {
+                    "type": "string",
+                    "maxLength": 10
+                },
+                "KANC_MB": {
+                    "type": "string",
+                    "maxLength": 7
+                },
+                "KANC_REG": {
+                    "type": "string",
+                    "maxLength": 11
+                },
+                "KANC_STATUS": {
+                    "type": "string",
+                    "maxLength": 1
+                }
+            },
+            "required": [
+                "KANC_ID",
+                "KANC_NAZIV",
+                "KANC_STATUS"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "DOKUMENTI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "IDENTIFIKATOR_DOKUMENTA": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "IDENTIFIKATOR_DOKUMENTA"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "DRZAVA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "DRZ_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3
+                },
+                "DR_NAZIV": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "DR_GRB": {
+                    "type": "string"
+                },
+                "DR_ZASTAVA": {
+                    "type": "string"
+                },
+                "DR_HIMNA": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "DR_NAZIV"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ISTORIJAT_POSLOVANJA",
+            "additionalProperties": false,
+            "properties": {
+                "PROF_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "IST_REDNI_BROJ": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "IST_OD": {
+                    "type": "string"
+                },
+                "IST_DO": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PROF_ID",
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "RLIC_ID",
+                "IST_REDNI_BROJ",
+                "IST_OD"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "MANDATI_PREDSEDNIKA_SUDA",
+            "additionalProperties": false,
+            "properties": {
+                "SUD_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "BROJ_MANDATA": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OD": {
+                    "type": "string"
+                },
+                "DO": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SUD_DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "OS_ID",
+                "RLIC_ID",
+                "BROJ_MANDATA",
+                "OD"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ODRADJENI_UGOVORI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "PROF_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "IST_REDNI_BROJ2": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "IST_OD": {
+                    "type": "string"
+                },
+                "IST_DO": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "LIC_BR",
+                "PROF_ID",
+                "IST_REDNI_BROJ2",
+                "IST_OD"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "OPSTINA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OP_OZNAKA": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "TERITORIJALNA_JEDINICA": {
+                    "type": "number"
+                },
+                "PO_NAZIV": {
+                    "type": "string",
+                    "maxLength": 60
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OP_OZNAKA",
+                "PO_NAZIV"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "OSOBA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_IME": {
+                    "type": "string",
+                    "maxLength": 60
+                },
+                "OS_PREZIME": {
+                    "type": "string",
+                    "maxLength": 80
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "POKRENUT_PROTIV",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "STRAN_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "STRAN_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "PRAVNI_ZASTUPNICI",
+            "additionalProperties": false,
+            "properties": {
+                "ROC_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "ROC_SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "ROC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "STRAN_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "BROJ_ZASTUPNISTVA": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RAD_OS_ID": {
+                    "type": "number"
+                },
+                "LIC_BR": {
+                    "type": "number"
+                },
+                "OS_ID": {
+                    "type": "number"
+                },
+                "ADV_LIC_BR": {
+                    "type": "number"
+                },
+                "BROJ_SLUZBENOG_ADVOKATA": {
+                    "type": "number"
+                },
+                "KANC_ID": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ROC_DR_IDENTIFIKATOR",
+                "ROC_SUD_ID",
+                "SP_ID",
+                "ROC_BR",
+                "STRAN_ID",
+                "BROJ_ZASTUPNISTVA"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "PREDMET",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "STRAN_ID": {
+                    "type": "number"
+                },
+                "OTVOREN": {
+                    "type": "string"
+                },
+                "ZAVRSEN": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "STRAN_ID",
+                "OTVOREN"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "PRESUDA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "STRAN_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "ROC_BR": {
+                    "type": "number"
+                },
+                "DATUM": {
+                    "type": "string"
+                },
+                "VRSTA_KAZNE": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "VISINA_KAZNE": {
+                    "type": "string",
+                    "maxLength": 50
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "STRAN_ID",
+                "ROC_BR",
+                "DATUM",
+                "VRSTA_KAZNE"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "PRESUDNO_TELO",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "ROC_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "ROC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "OS_ID",
+                "ROC_DR_IDENTIFIKATOR",
+                "ROC_BR",
+                "RLIC_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "RADNIK_PO_UGOVORU",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "PROF_ID": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "LIC_BR"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "REGISTAR_NADLEZNOSTI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "NADL_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "NADL_NAZIV": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "NADL_OPIS": {
+                    "type": "string",
+                    "maxLength": 1
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "NADL_ID",
+                "NADL_NAZIV"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "REGISTROVAN_ZA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "VR_SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "VR_SUD_NIVO": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "NADL_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "VR_SUD_ID",
+                "VR_SUD_NIVO",
+                "NADL_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ROCISTE",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "ROC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "DATUM_ODRZAVANJA": {
+                    "type": "string"
+                },
+                "TIP_ROCISTA": {
+                    "type": "string",
+                    "maxLength": 60
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "ROC_BR",
+                "DATUM_ODRZAVANJA"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "SLOZENA_DRZAVA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "DRZ_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "DRZ_DR_IDENTIFIKATOR"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "STRANKA",
+            "additionalProperties": false,
+            "properties": {
+                "STRAN_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "NAZIV": {
+                    "type": "string",
+                    "maxLength": 80
+                }
+            },
+            "required": [
+                "STRAN_ID",
+                "NAZIV"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "SUD",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "VR_SUD_ID": {
+                    "type": "number"
+                },
+                "VR_SUD_NIVO": {
+                    "type": "number"
+                },
+                "OS_ID": {
+                    "type": "number"
+                },
+                "RLIC_ID": {
+                    "type": "number"
+                },
+                "SUD_IME": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "SUD_ADRESA": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "SUD_MB": {
+                    "type": "string",
+                    "maxLength": 8
+                },
+                "SUD_PB": {
+                    "type": "number"
+                },
+                "SUD_PIB": {
+                    "type": "string",
+                    "maxLength": 10
+                },
+                "SUD_RACUN": {
+                    "type": "string",
+                    "maxLength": 30
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "VR_SUD_ID",
+                "VR_SUD_NIVO",
+                "OS_ID",
+                "RLIC_ID",
+                "SUD_IME",
+                "SUD_ADRESA"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "SUDOVI_U_NADLEZNOSTI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SUD_SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SUD_SUD_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "UGOVORNICI_KANCELARIJE",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "KANC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "LIC_BR",
+                "KANC_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "UGOVORNICI_SUDA",
+            "additionalProperties": false,
+            "properties": {
+                "SUD_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "SUD_DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "OS_ID",
+                "LIC_BR"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "UNUTRASNJA_ORGANIZACIJA",
+            "additionalProperties": false,
+            "properties": {
+                "SLOZENA_JEDINICA": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "JEDINICA_SASTAVA": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "SLOZENA_JEDINICA",
+                "JEDINICA_SASTAVA"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "VESTACI",
+            "additionalProperties": false,
+            "properties": {
+                "DOK_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "SP_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "DOKUMENT_U_RAZMATRANJU": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "LIC_BR": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DOK_DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "SP_ID",
+                "DOKUMENT_U_RAZMATRANJU",
+                "OS_ID",
+                "LIC_BR"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "VISA_TERITORIJALNA_JEDINICA",
+            "additionalProperties": false,
+            "properties": {
+                "BROJ_JEDINICE": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3
+                },
+                "SUD_ID": {
+                    "type": "number"
+                },
+                "OS_IME": {
+                    "type": "string",
+                    "maxLength": 60
+                }
+            },
+            "required": [
+                "BROJ_JEDINICE"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "VRSTA_SUDA",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "VR_SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "VR_SUD_NIVO": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "VR_SUD_NAZIV": {
+                    "type": "string",
+                    "maxLength": 80
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "VR_SUD_ID",
+                "VR_SUD_NIVO",
+                "VR_SUD_NAZIV"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ZANIMANJA",
+            "additionalProperties": false,
+            "properties": {
+                "PROF_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "NAZIV_PROFESIJE": {
+                    "type": "string",
+                    "maxLength": 80
+                }
+            },
+            "required": [
+                "PROF_ID",
+                "NAZIV_PROFESIJE"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ZAPOSLENI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "TRENUTNO_ZAPOSLJEN": {
+                    "type": "number"
+                },
+                "PROF_ID": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "RLIC_ID",
+                "PROF_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ZAPOSLENI_U_KANCELARIJI",
+            "additionalProperties": false,
+            "properties": {
+                "DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "KANC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "DR_IDENTIFIKATOR",
+                "OS_ID",
+                "RLIC_ID",
+                "KANC_ID"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "title": "ZAPOSLENI_U_SUDU",
+            "additionalProperties": false,
+            "properties": {
+                "SUD_DR_IDENTIFIKATOR": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "primaryKey": true
+                },
+                "SUD_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "OS_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                },
+                "RLIC_ID": {
+                    "type": "number",
+                    "primaryKey": true
+                }
+            },
+            "required": [
+                "SUD_DR_IDENTIFIKATOR",
+                "SUD_ID",
+                "OS_ID",
+                "RLIC_ID"
+            ]
+        }
+    ]
+	,
+	"relations": [
+     		 {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+     	  		"type": "zero or one to many",
+          		"from": "SUD",
+          		"to": "ZAPOSLENI_U_SUDU",
+          		"fromAttribute": "SUD_ID",
+          		"toAttribute": "SUD_ID",
+          		"relationName": "MojaRelacija"
+    		 },
+		 {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+     	  		"type": "zero or one to many",
+          		"from": "SUD",
+          		"to": "VISA_TERITORIJALNA_JEDINICA",
+          		"fromAttribute": "SUD_ID",
+          		"toAttribute": "SUD_ID",
+          		"relationName": "MojaDrugaRelacija"
+    		 },
+		 {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+     	  		"type": "zero or one to many",
+          		"from": "SUD",
+          		"to": "DRZAVA",
+          		"fromAttribute": "DR_IDENTIFIKATOR",
+          		"toAttribute": "DR_IDENTIFIKATOR",
+          		"relationName": "Drzavna relacija"
+    		 },
+		 {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+     	  		"type": "zero or one to many",
+          		"from": "SUD",
+          		"to": "OPSTINA",
+          		"fromAttribute": "DR_IDENTIFIKATOR",
+          		"toAttribute": "DR_IDENTIFIKATOR",
+          		"relationName": "Drzavna relacija"
+		 }
+	]
+}
