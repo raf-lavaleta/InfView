@@ -1,7 +1,5 @@
 NOTE: Architecture is heavily based on InstaFram
 
-![InfView Demo](demo.png)
-
 # 1. Introduction
 
 This document displays, analyzes and defines the need for InfView. It focuses on the needs of stakeholders and describes details on how InfView meets needs.
