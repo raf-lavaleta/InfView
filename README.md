@@ -49,7 +49,7 @@ This section provides a high level of display of product features, interfaces fo
 
 ## 3.1. Product Perspective
 
-The software product InfView is independent upon use, while the InstaFram tool is required for its [installation](https://www.lazarjelic.com/ecloga/projects/infview/get.php?q=instafram). During the use of the tools, communication with external services such as user registration service, error reporting service, online help service, etc. is realized.
+The software product InfView is independent upon use, while the InstaFram tool is required for its installation. During the use of the tools, communication with external services such as user registration service, error reporting service, online help service, etc. is realized.
 
 ## 3.2. Ability Ability
 
@@ -61,7 +61,7 @@ The program InfView can be executed on all operating systems that have the [Java
 
 ## 3.4. Licensing and installation
 
-Our users get a license to use InfView, which applies only to a single computer. Installing this software is done using the [InstaFram](https://www.lazarjelic.com/ecloga/projects/infview/get.php?q=instafram) tool, which is also available to our users for testing with the appropriate parameters necessary for temporary use tools.
+Our users get a license to use InfView, which applies only to a single computer. Installing this software is done using the InstaFram tool, which is also available to our users for testing with the appropriate parameters necessary for temporary use tools.
 
 # 4. Limitations
 
@@ -108,7 +108,3 @@ This section describes the documentation that must be developed to support the s
 ## 5.1. User manual
 
 The user has the ability to read the instructions to be accessed from the program at any time. The guide provides a detailed overview of the options that are explained step-by-step. The manual was created to explain the general purpose of the tool, while online help is recommended for specific use.
-
-## 5.2. Online help
-
-Online help is intended for users who did not help the instruction or use the tool for a specific case. The user has the ability to ask at any time the question whose answer is received within 24 hours. The question is asked by filling in the [form](https://www.lazarjelic.com/ecloga/projects/software_admin/help.php).
